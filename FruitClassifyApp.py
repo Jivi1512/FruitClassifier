@@ -6,7 +6,7 @@ from PIL import Image, ImageOps
 from keras.models import load_model
 from tensorflow.keras.preprocessing import image
 
-model= load_model("best_resnet.keras")
+model= load_model("best_resnet.keras", safe_mode=False, compile=False)
 class_labels=['Apple Braeburn', 'Apple Granny Smith', 'Apricot', 'Avocado', 'Banana', 'Blueberry',
                'Cactus fruit', 'Cantaloupe', 'Cherry', 'Clementine', 'Corn', 'Cucumber Ripe', 'Grape Blue',
                  'Kiwi', 'Lemon', 'Limes', 'Mango', 'Onion White', 'Orange', 'Papaya', 'Passion Fruit', 'Peach',
