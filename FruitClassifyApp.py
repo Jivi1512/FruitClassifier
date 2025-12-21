@@ -1,19 +1,17 @@
 import numpy as np
 import streamlit as st
 import tensorflow as tf
-import matplotlib.pyplot as plt
 from PIL import Image, ImageOps
+import matplotlib.pyplot as plt
 from keras.models import load_model
 from tensorflow.keras.preprocessing import image
+from tensorflow.keras.applications import ResNet50
 from tensorflow.keras.applications.resnet50 import preprocess_input
 
-import os
-
-MODEL_PATH=os.path.join(os.getcwd(), "best_resnet.keras")
 model=tf.keras.models.load_model(
-    MODEL_PATH,
-    compile=False)
-
+    "best_resnet.keras",
+    compile=False,
+    custom_objects={"ResNet50": ResNet50})
 
 class_labels=['Apple Braeburn', 'Apple Granny Smith', 'Apricot', 'Avocado', 'Banana', 'Blueberry', 'Cactus fruit', 'Cantaloupe', 'Cherry', 'Clementine', 'Corn', 'Cucumber Ripe',
     'Grape Blue', 'Kiwi', 'Lemon', 'Limes', 'Mango', 'Onion White', 'Orange', 'Papaya', 'Passion Fruit', 'Peach', 'Pear', 'Pepper Green', 'Pepper Red', 'Pineapple', 'Plum',
