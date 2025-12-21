@@ -9,7 +9,7 @@ from tensorflow.keras.applications.resnet50 import preprocess_input
 
 import os
 
-MODEL_PATH=os.path.join(os.getcwd(), "best_resnet.h5")
+MODEL_PATH=os.path.join(os.getcwd(), "best_resnet.keras")
 model=tf.keras.models.load_model(
     MODEL_PATH,
     compile=False)
