@@ -3,3 +3,4 @@ tensorflow==2.12.0
 pillow==9.5.0
 numpy==1.23.5
 matplotlib
+keras==2.13.1
