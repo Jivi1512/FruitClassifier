@@ -7,7 +7,13 @@ from keras.models import load_model
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.resnet50 import preprocess_input
 
-model=tf.keras.models.load_model("best_resnet.keras", compile=False)
+import os
+
+MODEL_PATH=os.path.join(os.getcwd(), "best_resnet.keras")
+model=tf.keras.models.load_model(
+    MODEL_PATH,
+    compile=False)
+
 
 class_labels=['Apple Braeburn', 'Apple Granny Smith', 'Apricot', 'Avocado', 'Banana', 'Blueberry', 'Cactus fruit', 'Cantaloupe', 'Cherry', 'Clementine', 'Corn', 'Cucumber Ripe',
     'Grape Blue', 'Kiwi', 'Lemon', 'Limes', 'Mango', 'Onion White', 'Orange', 'Papaya', 'Passion Fruit', 'Peach', 'Pear', 'Pepper Green', 'Pepper Red', 'Pineapple', 'Plum',
